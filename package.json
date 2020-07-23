@@ -2,9 +2,9 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/index",
+    "start": "node src/app",
     "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
   },
   "author": "nszl",
