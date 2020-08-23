@@ -18,7 +18,7 @@ const taskSchema = mongoose.Schema({
     }
 },{timestamps : true})
 
-//task model
+//attatching task schema to task model
 const Task = mongoose.model("Task",taskSchema)
 
 module.exports = Task

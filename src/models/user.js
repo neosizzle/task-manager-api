@@ -123,7 +123,7 @@ userSchema.methods.toJSON = function(){
 }
 
 
-//user model
+//attatching user schema to user model
 const User = mongoose.model("User",userSchema)
 
 module.exports = User

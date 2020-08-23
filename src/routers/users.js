@@ -35,11 +35,11 @@ router.post('/users', async (req,res)=>{
 router.post('/users/login', async (req,res)=>{
     const email = req.body.email
     const password = req.body.password
-    if(!email || !password) res.status(401).send("Bad request!")
+    if(!email || !password) res.status(404).send("Bad request!")
 
     try{
         const user = await User.findByCredentials(email,password)
-        if(!user) res.status(401).send("Unable to login!")
+        if(!user) res.status(404).send("Unable to login!")
 
         
         const token = await user.generateAuthToken()
@@ -48,7 +48,7 @@ router.post('/users/login', async (req,res)=>{
 
 
     }
-    catch(e){res.status(404).send(e)}
+    catch(e){res.status(401).send(e)}
 })
 
 //user logout endpoint  
